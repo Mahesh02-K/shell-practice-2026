@@ -1,6 +1,6 @@
 #!/bin/bash
 
-N=100
+N=9
 
 # -lt = less than
 # -gt = greater than
