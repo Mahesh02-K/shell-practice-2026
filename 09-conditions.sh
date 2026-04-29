@@ -9,7 +9,7 @@ N=9
 
 if [ $N -lt 10 ]
 then
-    echo "Given $N is less than 10"
+    echo "Given number $N is less than 10"
 else
-    echo "Given $N is not less than 10"
+    echo "Given number $N is not less than 10"
 fi 
