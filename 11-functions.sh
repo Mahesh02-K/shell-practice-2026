@@ -11,6 +11,7 @@ else
 fi 
 
 #validate function takes input as exit status and what command we tried to install
+#function takes inputs do something for us and we can whenever/wherever we want
 VALIDATE(){
     if [ $1 -eq 0 ]
     then 
