@@ -10,17 +10,9 @@ else
     exit 1
 fi 
 
-# VALIDATE(){
-#     if [ $1 -eq 0 ]
-#     then 
-#         echo "Installing $2 is ... SUCCESS"
-#     else
-#         echo "Installing $2 is ... FAILURE"
-#         exit 1
-#     fi
-# }
+#validate function takes input as exit status and what command we tried to install
 VALIDATE(){
-    if [ "$1" -eq 0 ]
+    if [ $1 -eq 0 ]
     then 
         echo "Installing $2 is ... SUCCESS"
     else
@@ -37,7 +29,7 @@ then
 else
     echo "Mysql is not installed.. Going to install"
     dnf install mysql -y
-    VALIDATE "Mysql"
+    VALIDATE $? "Mysql"
 fi 
 
 dnf list installed python3 -y
@@ -48,7 +40,7 @@ then
 else
     echo "Python is not installed.. Going to install"
     dnf install python3 -y
-    VALIDATE "python3"
+    VALIDATE $? "python3"
 fi
 
 dnf list installed nginx -y
@@ -59,5 +51,5 @@ then
 else
     echo "Nginx is not installed.. Going to install"
     dnf install nginx -y
-    VALIDATE "nginx"
+    VALIDATE $? "nginx"
 fi
