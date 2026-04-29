@@ -10,6 +10,15 @@ else
     exit 1
 fi 
 
+# VALIDATE(){
+#     if [ $1 -eq 0 ]
+#     then 
+#         echo "Installing $2 is ... SUCCESS"
+#     else
+#         echo "Installing $2 is ... FAILURE"
+#         exit 1
+#     fi
+# }
 VALIDATE(){
     if [ "$1" -eq 0 ]
     then 
