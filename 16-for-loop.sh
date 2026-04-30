@@ -39,7 +39,7 @@ do
     then 
         echo -e "$package is $Y ALREADY INSTALLED $N ... Nothing to do" | tee -a $LOG_FILE
     else
-        echo -e "$package is $R NOT INSTALLED $N" ... Going to install" | tee -a $LOG_FILE
+        echo -e "$package is $R NOT INSTALLED $N ... Going to install" | tee -a $LOG_FILE
         dnf install $package -y &>>$LOG_FILE
         VERIFY $? $package
     fi
