@@ -35,3 +35,33 @@ else
     dnf install mysql -y
     VERIFY $? Mysql
 fi
+
+dnf list installed httpd -y
+if [ $? -eq 0 ]
+then
+    echo -e "Httpd is $Y ALREADY INSTALLED $N ... Nothing to do"
+else
+    echo -e "Httpd is $R NOT INSTALLED $N ... Going to install"
+    dnf install httpd -y 
+    VERIFY $? Httpd
+fi
+
+dnf list installed nginx -y 
+if [ $? -eq 0 ]
+then 
+    echo -e "Nginx is $Y ALREADY INSTALLED $N ... Nothing to do"
+else 
+    echo -e "Nginx is $R NOT INSTALLED $N ... Going to install"
+    dnf install nginx -y 
+    VERIFY $? Nginx
+fi
+
+dnf list installed python3 -y 
+if [ $? -eq 0 ]
+then
+    echo -e "Python3 is $Y ALREADY INSTALLED $N ... Nothing to do"
+else
+    echo -e "Python3 is $R NOT INSTALLED $N ... Going to install"
+    dnf install python3 -y 
+    VERIFY $? Python3
+fi
