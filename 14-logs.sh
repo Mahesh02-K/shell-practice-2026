@@ -39,3 +39,13 @@ else
     dnf install mysql -y &>>$LOG_FILE
     VERIFY $? Mysql
 fi
+
+dnf list installed httpd -y &>>$LOG_FILE
+if [ $? -eq 0 ]
+then 
+    echo -e "Httpd is $Y ALREADY INSTALLED $N ... Nothing to do" | tee -a $LOG_FILE
+else
+    echo -e "Httpd is $R NOT INSTALLED $N ... Going to install" | tee -a  $LOG_FILE
+    dnf install httpd -y &>>$LOG_FILE
+    VERIFY $? Httpd
+fi
