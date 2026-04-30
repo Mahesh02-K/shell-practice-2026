@@ -32,7 +32,8 @@ VERIFY(){
     fi
 }
 
-for package in ${packages[@]}
+# for package in ${packages[@]}
+for package in $@
 do 
     dnf list installed $package -y &>>$LOG_FILE
     if [ $? -eq 0 ]
