@@ -12,6 +12,7 @@ LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOG_FOLDER
 
+#check root previleges
 if [ $USERID -eq 0 ]
 then
     echo -e "$G You are running with root access $N" | tee -a $LOG_FILE
@@ -48,4 +49,4 @@ else
     echo -e "Httpd is $R NOT INSTALLED $N ... Going to install" | tee -a  $LOG_FILE
     dnf install httpd -y &>>$LOG_FILE
     VERIFY $? Httpd
-fi
+fi  
