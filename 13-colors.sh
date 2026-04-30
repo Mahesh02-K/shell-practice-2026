@@ -11,7 +11,7 @@ if [ $USERID -eq 0 ]
 then
     echo -e "You are running with root access ... $Y PROCEED $N"
 else
-    echo -e "$R ERR :: $Y Please run this with root access $N"
+    echo -e "$R ERR :::$Y Please run this with root access $N"
     exit 1
 fi
 
