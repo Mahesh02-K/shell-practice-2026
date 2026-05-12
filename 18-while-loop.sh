@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while {1..10}
+while i in {1..10}
 do
     echo $i
 done
