@@ -1,6 +1,9 @@
 #!/bin/bash
 
-while i in {1..10}
+a=0
+
+while [ $a -lt 100 ]
 do
-    echo $i
+    echo $a
+    a="expr $a +1"
 done
